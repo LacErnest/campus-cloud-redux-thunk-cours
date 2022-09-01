@@ -8,6 +8,7 @@ import { fetchingPosts } from './redux/actions/actionCreators'
 function App() {
   
   const posts = useSelector((store) => store.posts)
+  const loading = useSelector((store) => store.loading)
 
   const dispatch = useDispatch()
 
@@ -16,10 +17,12 @@ function App() {
       dispatch(fetchingPosts())
     }
   }, [posts])
-
+  const listPosts = posts.map(post => <li key={post.id}>{post.title}</li>)
   return (
     <div className="App">
-      
+      {loading ? <div>Chargement des posts...</div>: 
+      <ul>{listPosts}</ul>
+      }
     </div>
   )
 }
