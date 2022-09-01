@@ -10,7 +10,7 @@ function loadingPosts(){
   return {type: LOADING_POSTS}
 }
 
-function fetchingPosts(posts){
+function fetchingPosts(){
   return (dispatch) => {
     dispatch(loadingPosts())
 
