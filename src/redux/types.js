@@ -1,0 +1,2 @@
+export const FETCHED_POSTS = "FETCHED_POSTS"
+export const LOADING_POSTS = "LOADING_POSTS"
